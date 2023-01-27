@@ -170,20 +170,16 @@ function App() {
   };
 
   useEffect(() => {
-    // Setup Canvas
     const ctx = canvasRef.current.getContext("2d");
     ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0);
 
-    // Draw Snake
     ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-    ctx.fillStyle = "rgb(62, 73, 89)";
+    ctx.fillStyle = "rgb(50, 168, 82)";
     snake.forEach(([x, y]) => ctx.fillRect(x, y, 1, 1));
 
-    // Draw Apple
-    ctx.fillStyle = "rgb(50, 168, 82)";
+    ctx.fillStyle = "rgb(209, 31, 31)";
     ctx.fillRect(apple[0], apple[1], 1, 1);
 
-    // Listen for arrow key changes
     window.addEventListener("keydown", handleControl);
 
     return () => {
